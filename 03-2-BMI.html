@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI 計算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #555;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>BMI 計算結果</h1>
+        <p class="result" id="bmiResult">計算中...</p>
+    </div>
+
+    <script>
+        // 輸入身高與體重
+        let height = prompt('請輸入您的身高（單位：公分）', 170); // 預設值為170
+        let weight = prompt('請輸入您的體重（單位：公斤）', 60);  // 預設值為60
+
+        // 計算 BMI
+        let bmi = weight / Math.pow(height / 100, 2);
+        let bmiRounded = parseFloat(bmi.toFixed(1)); // 四捨五入到整數第一位
+
+        // 將 BMI 結果顯示在畫面中
+        document.getElementById('bmiResult').innerText= `您的 BMI 是：${bmiRounded}`;
+    </script>
+</body>
+
+</html>
